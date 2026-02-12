@@ -1,20 +1,42 @@
+import { useState } from "react";
+
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <nav style={navStyle}>
-      <h2 style={{ color: "#38bdf8" }}>Portfolio</h2>
-      <div style={{ display: "flex", gap: "25px" }}>
-        <a href="#skills">Skills</a>
-        <a href="#Experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+    <>
+      <nav style={navStyle}>
+        <h2 style={{ color: "#38bdf8" }}>Portfolio</h2>
+
+        {/* Desktop links */}
+        <div className="nav-links-desktop">
+          <a href="#skills">Skills</a>
+          <a href="#Experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        {/* Mobile menu icon */}
+        <div className="menu-icon" onClick={() => setOpen(!open)}>
+          ☰
+        </div>
+      </nav>
+
+      {/* Mobile side menu */}
+      <div className={`mobile-menu ${open ? "active" : ""}`}>
+        <a onClick={() => setOpen(false)} href="#skills">Skills</a>
+        <a onClick={() => setOpen(false)} href="#Experience">Experience</a>
+        <a onClick={() => setOpen(false)} href="#projects">Projects</a>
+        <a onClick={() => setOpen(false)} href="#contact">Contact</a>
       </div>
-    </nav>
+    </>
   );
 };
 
 const navStyle = {
   display: "flex",
   justifyContent: "space-between",
+  alignItems: "center",
   padding: "20px 10%",
   position: "sticky",
   top: 0,
@@ -22,7 +44,5 @@ const navStyle = {
   background: "rgba(15,23,42,0.6)",
   zIndex: 1000,
 };
-
-
 
 export default Navbar;

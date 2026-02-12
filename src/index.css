@@ -250,31 +250,6 @@ nav a:hover {
   cursor: pointer;
 }
 
-/* Mobile Menu */
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  right: -260px;
-  width: 260px;
-  height: 100vh;
-  background: #0f172a;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  padding-top: 100px;
-  text-align: center;
-  transition: 0.3s ease;
-}
-
-.mobile-menu.active {
-  right: 0;
-}
-
-.mobile-menu a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.1rem;
-}
 
 /* ---------- HERO ---------- */
 
@@ -367,4 +342,66 @@ nav a:hover {
 }
 .menu-icon {
   margin-left: auto;  /* keeps it RIGHT */
+}
+/* Desktop navbar */
+.nav-links-desktop {
+  display: flex;
+  gap: 25px;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* Mobile side menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 260px;
+  height: 100vh;
+  background: #0f172a;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 100px;
+  text-align: center;
+  transition: 0.3s ease;
+  z-index: 2000;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+/* Mobile only */
+@media (max-width: 768px) {
+  .nav-links-desktop {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  section {
+    padding: 80px 6%;
+  }
+
+  section > div {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
 }
