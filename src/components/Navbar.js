@@ -1,28 +1,35 @@
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <nav style={navStyle}>
-      <h2 style={{ color: "#38bdf8" }}>Shrajna R</h2>
-      <div style={{ display: "flex", gap: "25px" }}>
+    <nav className="navbar">
+      <h2 className="logo">Shrajna R</h2>
+
+      {/* Desktop Links */}
+      <div className="nav-links">
         <a href="#skills">Skills</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </div>
+
+      {/* Hamburger Icon */}
+      <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? <FaTimes /> : <FaBars />}
+      </div>
+
+      {/* Mobile Menu */}
+      <div className={`mobile-menu ${menuOpen ? "active" : ""}`}>
+        <a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a>
+        <a href="#experience" onClick={() => setMenuOpen(false)}>Experience</a>
+        <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
+        <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+      </div>
     </nav>
   );
 };
-
-const navStyle = {
-  display: "flex",
-  justifyContent: "space-between",
-  padding: "20px 10%",
-  position: "sticky",
-  top: 0,
-  backdropFilter: "blur(12px)",
-  background: "rgba(15,23,42,0.6)",
-  zIndex: 1000,
-};
-
-
 
 export default Navbar;

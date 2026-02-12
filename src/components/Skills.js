@@ -1,20 +1,12 @@
 import {
-  SiSpringboot,
-  SiMysql,
-  SiDocker,
-  SiPython,
-  SiCplusplus,
-  SiJavascript,
-  SiHtml5,
-  SiCss3,
-  SiReact
+  SiSpringboot, SiMysql, SiDocker, SiPython,
+  SiCplusplus, SiJavascript, SiHtml5, SiCss3, SiReact
 } from "react-icons/si";
-
 import { FaJava } from "react-icons/fa";
 
 const Skills = () => {
   const skills = [
-    { icon: <FaJava />, name: "Java" },          // ✅ Java fixed
+    { icon: <FaJava />, name: "Java" },
     { icon: <SiSpringboot />, name: "Spring Boot" },
     { icon: <SiMysql />, name: "MySQL" },
     { icon: <SiDocker />, name: "Docker" },
@@ -27,14 +19,11 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" style={{ padding: "80px 0", overflow: "hidden" }}>
-      <h2 style={{ textAlign: "center", marginBottom: "40px" }}>
-        Skills
-      </h2>
-
+    <section id="skills" style={{ padding: "80px 0" }}>
+      <h2>Skills</h2>
       <div className="skills-wrapper">
         <div className="skills-track">
-          {skills.concat(skills).map((skill, index) => (
+          {skills.map((skill, index) => (
             <div className="skill-card" key={index}>
               <div className="skill-icon">{skill.icon}</div>
               <p>{skill.name}</p>
