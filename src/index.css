@@ -253,39 +253,9 @@ nav a:hover {
 
 /* ---------- HERO ---------- */
 
-.hero-section {
-  padding: 120px 20px;
-}
-
-.hero-container {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 50px;
-}
-
-.hero-content {
-  flex: 1;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-}
 
 .highlight {
   color: #38bdf8;
-}
-
-.hero-content h3 {
-  margin: 15px 0;
-  color: #60a5fa;
-}
-
-.hero-content p {
-  max-width: 500px;
-  line-height: 1.7;
 }
 
 .hero-buttons {
@@ -340,9 +310,7 @@ nav a:hover {
     margin: auto;
   }
 }
-.menu-icon {
-  margin-left: auto;  /* keeps it RIGHT */
-}
+
 /* Desktop navbar */
 .nav-links-desktop {
   display: flex;
