@@ -365,7 +365,13 @@ nav a:hover {
     padding: 80px 6%;
   }
 
-  
+  section > div {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
 }
 .hero {
   display: flex;
