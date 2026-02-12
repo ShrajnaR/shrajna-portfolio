@@ -6,23 +6,27 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <h2 className="logo">Portfolio</h2>
+      <div className="nav-container">
+        <h2 className="logo">Portfolio</h2>
 
-      {/* Desktop Links */}
-      <div className="nav-links">
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
+        {/* Desktop Links */}
+        <div className="nav-links">
+          <a href="#home">Home</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
 
-      {/* Hamburger Icon for Mobile */}
-      <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
-        {menuOpen ? <FaTimes /> : <FaBars />}
+        {/* Hamburger */}
+        <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </div>
       </div>
 
       {/* Mobile Menu */}
       <div className={`mobile-menu ${menuOpen ? "active" : ""}`}>
+        <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
         <a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a>
         <a href="#experience" onClick={() => setMenuOpen(false)}>Experience</a>
         <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
