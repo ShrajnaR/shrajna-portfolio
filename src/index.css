@@ -69,9 +69,9 @@ h2 {
 
 .skills-track {
   display: flex;
-  width: max-content;
-  animation: scroll 20s linear infinite;
+  gap: 30px;
 }
+
 
 .skill-card {
   min-width: 150px;
@@ -205,4 +205,87 @@ nav a:hover {
 
 .certificate-link:hover {
   color: #60a5fa;
+}
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(12px);
+  background: rgba(15,23,42,0.7);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #2563eb;
+}
+
+/* Mobile */
+.menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 100vh;
+  width: 250px;
+  background: #0f172a;
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+  gap: 30px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+html, body {
+  overflow-x: hidden;
+}
+* {
+  max-width: 100%;
 }
