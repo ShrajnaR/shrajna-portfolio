@@ -11,21 +11,26 @@ const Navbar = () => {
         {/* Desktop links */}
         <div className="nav-links-desktop">
           <a href="#skills">Skills</a>
-          <a href="#Experience">Experience</a>
+          <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
         </div>
 
         {/* Mobile menu icon */}
-        <div className="menu-icon" onClick={() => setOpen(!open)}>
+        <div className="menu-icon" onClick={() => setOpen(true)}>
           ☰
         </div>
       </nav>
 
+      {/* Overlay */}
+      {open && <div className="menu-overlay" onClick={() => setOpen(false)} />}
+
       {/* Mobile side menu */}
       <div className={`mobile-menu ${open ? "active" : ""}`}>
+        <span className="close-icon" onClick={() => setOpen(false)}>✕</span>
+
         <a onClick={() => setOpen(false)} href="#skills">Skills</a>
-        <a onClick={() => setOpen(false)} href="#Experience">Experience</a>
+        <a onClick={() => setOpen(false)} href="#experience">Experience</a>
         <a onClick={() => setOpen(false)} href="#projects">Projects</a>
         <a onClick={() => setOpen(false)} href="#contact">Contact</a>
       </div>

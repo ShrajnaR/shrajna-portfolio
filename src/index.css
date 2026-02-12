@@ -405,3 +405,25 @@ nav a:hover {
     gap: 40px;
   }
 }
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image {
+    order: 1;   /* IMAGE FIRST */
+  }
+
+  .hero-text {
+    order: 2;   /* TEXT AFTER */
+  }
+}

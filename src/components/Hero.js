@@ -4,8 +4,20 @@ import profile from "../assets/profile.jpg";
 
 const Hero = () => {
   return (
-    <section style={heroStyle}>
+    <section className="hero">
+      {/* IMAGE */}
       <motion.div
+        className="hero-image"
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <img src={profile} alt="profile" style={imgStyle} />
+      </motion.div>
+
+      {/* TEXT */}
+      <motion.div
+        className="hero-text"
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1 }}
@@ -46,59 +58,8 @@ const Hero = () => {
           Contact Me
         </a>
       </motion.div>
-
-      <motion.img
-        src={profile}
-        alt="profile"
-        style={imgStyle}
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 1 }}
-      />
     </section>
   );
-};
-
-const heroStyle = {
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  flexWrap: "wrap",
-};
-
-const imgStyle = {
-  width: "300px",
-  height: "300px",
-  objectFit: "cover",
-  borderRadius: "50%",
-  border: "4px solid #38bdf8",
-  boxShadow: "0 0 40px rgba(56,189,248,0.6)",
-};
-
-const resumeButtonStyle = {
-  display: "inline-block",
-  marginTop: "20px",
-  marginRight: "15px",
-  padding: "12px 28px",
-  borderRadius: "30px",
-  border: "2px solid #38bdf8",
-  color: "#38bdf8",
-  textDecoration: "none",
-  fontWeight: "600",
-  transition: "0.3s",
-};
-
-const contactButtonStyle = {
-  display: "inline-block",
-  marginTop: "20px",
-  marginRight: "15px",
-  padding: "12px 28px",
-  borderRadius: "30px",
-  border: "2px solid #38bdf8",
-  color: "#38bdf8",
-  textDecoration: "none",
-  fontWeight: "600",
-  transition: "0.3s",
 };
 
 export default Hero;
