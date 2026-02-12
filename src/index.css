@@ -310,7 +310,9 @@ nav a:hover {
     margin: auto;
   }
 }
-
+.menu-icon {
+  margin-left: auto;  /* keeps it RIGHT */
+}
 /* Desktop navbar */
 .nav-links-desktop {
   display: flex;
