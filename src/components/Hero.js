@@ -5,65 +5,83 @@ import profile from "../assets/profile.jpg";
 const Hero = () => {
   return (
     <section style={heroStyle}>
-  <motion.div
-    style={textContainerStyle}   // NEW: container for text
-    initial={{ x: -100, opacity: 0 }}
-    animate={{ x: 0, opacity: 1 }}
-    transition={{ duration: 1 }}
-  >
-    <h1 style={{ fontSize: "3rem" }}>
-      Hi, I'm <span style={{ color: "#38bdf8" }}>Shrajna R</span>
-    </h1>
-
-    <h3 style={{ marginTop: "20px" }}>
-      <ReactTyped
-        strings={[
-          "Java Backend Developer",
-          "Effective Learner",
-          "Tech Enthusiast",
-          "Problem Solver",
-        ]}
-        typeSpeed={60}
-        backSpeed={40}
-        loop
-      />
-    </h3>
-
-    <p style={{ marginTop: "20px", maxWidth: "500px" }}>
-      Software Engineer skilled in Java, Spring Boot, SQL, Docker, and
-      Data Structures & Algorithms. Passionate about building scalable backend
-      systems.
-    </p>
-
-    <div style={buttonsWrapperStyle}> {/* NEW WRAPPER */}
-      <a
-        href="/Shrajna_Resume.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        style={resumeButtonStyle}
+      {/* Text + Buttons */}
+      <motion.div
+        style={textContainerStyle}
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1 }}
       >
-        View Resume
-      </a>
+        <h1 style={{ fontSize: "3rem" }}>
+          Hi, I'm <span style={{ color: "#38bdf8" }}>Shrajna R</span>
+        </h1>
 
-      <a href="#contact" style={contactButtonStyle}>
-        Contact Me
-      </a>
-    </div>
-  </motion.div>
+        <h3 style={{ marginTop: "20px" }}>
+          <ReactTyped
+            strings={[
+              "Java Backend Developer",
+              "Effective Learner",
+              "Tech Enthusiast",
+              "Problem Solver",
+            ]}
+            typeSpeed={60}
+            backSpeed={40}
+            loop
+          />
+        </h3>
 
-  <motion.img
-    src={profile}
-    alt="profile"
-    style={imgStyle}
-    initial={{ scale: 0 }}
-    animate={{ scale: 1 }}
-    transition={{ duration: 1 }}
-  />
-</section>
+        <p style={{ marginTop: "20px", maxWidth: "500px" }}>
+          Software Engineer skilled in Java, Spring Boot, SQL, Docker, and
+          Data Structures & Algorithms. Passionate about building scalable backend
+          systems.
+        </p>
 
+        <div style={buttonsWrapperStyle}>
+          <a
+            href="/Shrajna_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={resumeButtonStyle}
+          >
+            View Resume
+          </a>
+
+          <a href="#contact" style={contactButtonStyle}>
+            Contact Me
+          </a>
+        </div>
+      </motion.div>
+
+      {/* Profile Image */}
+      <motion.img
+        src={profile}
+        alt="profile"
+        style={imgStyle}
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1 }}
+      />
+
+      {/* Skills Loop */}
+      <div className="skills-wrapper" style={{ marginTop: "40px", width: "100%" }}>
+        <div className="skills-track">
+          <div className="skill-card">React</div>
+          <div className="skill-card">JavaScript</div>
+          <div className="skill-card">Firebase</div>
+          <div className="skill-card">Spring Boot</div>
+          <div className="skill-card">SQL</div>
+          <div className="skill-card">Docker</div>
+          {/* Repeat skills for seamless scrolling */}
+          <div className="skill-card">React</div>
+          <div className="skill-card">JavaScript</div>
+          <div className="skill-card">Firebase</div>
+        </div>
+      </div>
+    </section>
   );
 };
 
+// Hero section styles
 const heroStyle = {
   display: "flex",
   justifyContent: "space-between",
@@ -72,6 +90,7 @@ const heroStyle = {
   gap: "2rem",
 };
 
+// Text container
 const textContainerStyle = {
   display: "flex",
   flexDirection: "column",
@@ -79,6 +98,7 @@ const textContainerStyle = {
   flex: 1,
 };
 
+// Profile image
 const imgStyle = {
   width: "300px",
   height: "300px",
@@ -89,7 +109,7 @@ const imgStyle = {
   order: 1, // desktop: image first
 };
 
-/* Wrapper for buttons to allow side-by-side */
+// Buttons wrapper
 const buttonsWrapperStyle = {
   display: "flex",
   gap: "15px",
@@ -97,7 +117,7 @@ const buttonsWrapperStyle = {
   marginTop: "20px",
 };
 
-/* Existing button styles (you already have) */
+// Buttons
 const resumeButtonStyle = {
   display: "inline-block",
   padding: "12px 28px",
@@ -119,8 +139,5 @@ const contactButtonStyle = {
   fontWeight: "600",
   transition: "0.3s",
 };
-
-
-
 
 export default Hero;
