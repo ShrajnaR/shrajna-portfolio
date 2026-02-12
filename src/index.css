@@ -190,9 +190,8 @@ nav a:visited {
 }
 
 nav a:hover {
-  color: #2563eb;
+  color: #38bdf8;
 }
-
 .certificate-link {
   display: inline-block;
   margin-top: 15px;
@@ -205,30 +204,52 @@ nav a:hover {
 .certificate-link:hover {
   color: #60a5fa;
 }
-/* Mobile Menu Overlay */
-.mobile-menu-overlay {
-  position: fixed;
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.4);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease;
-  z-index: 998;
+  backdrop-filter: blur(12px);
+  background: rgba(15,23,42,0.7);
+  z-index: 1000;
 }
 
-.mobile-menu-overlay.active {
-  opacity: 1;
-  visibility: visible;
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2563eb;
 }
 
-/* Mobile Menu */
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #2563eb;
+}
+
+/* Mobile */
+.menu-icon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
 .mobile-menu {
   position: fixed;
   top: 0;
-  right: -300px; /* hidden offscreen */
+  right: -100%;
   height: 100vh;
   width: 250px;
   background: #0f172a;
@@ -237,21 +258,17 @@ nav a:hover {
   padding-top: 100px;
   gap: 30px;
   text-align: center;
-  transition: right 0.3s ease;
-  z-index: 999;
+  transition: 0.3s ease;
+}
+
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
 }
 
 .mobile-menu.active {
   right: 0;
-}
-
-/* Hamburger Icon */
-.menu-icon {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: white;
-  z-index: 1000;
 }
 
 /* Responsive */
@@ -259,6 +276,7 @@ nav a:hover {
   .nav-links {
     display: none;
   }
+
   .menu-icon {
     display: block;
   }
