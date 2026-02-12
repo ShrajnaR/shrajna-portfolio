@@ -12,7 +12,7 @@ const Hero = () => {
         animate={{ scale: 1 }}
         transition={{ duration: 1 }}
       >
-        <img src={profile} alt="profile" className="hero-img" />
+        <img src={profile} alt="profile" style={imgStyle} />
       </motion.div>
 
       {/* TEXT */}
@@ -22,11 +22,11 @@ const Hero = () => {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <h1>
-          Hi, I'm <span className="highlight">Shrajna R</span>
+        <h1 style={{ fontSize: "3rem" }}>
+          Hi, I'm <span style={{ color: "#38bdf8" }}>Shrajna R</span>
         </h1>
 
-        <h3>
+        <h3 style={{ marginTop: "20px" }}>
           <ReactTyped
             strings={[
               "Java Backend Developer",
@@ -40,20 +40,23 @@ const Hero = () => {
           />
         </h3>
 
-        <p>
-          Software Engineer skilled in Java, Spring Boot, SQL, Docker, and
-          Data Structures & Algorithms.
+        <p style={{ marginTop: "20px", maxWidth: "500px" }}>
+          Software Engineer skilled in Java, Spring Boot, SQL, Docker, and Data
+          Structures & Algorithms. Passionate about building scalable backend systems.
         </p>
 
-        <div className="hero-buttons">
-          <a href="/Shrajna_Resume.pdf" className="btn-outline" target="_blank">
-            View Resume
-        </a>
-        <a href="#contact" className="btn-outline">
-            Contact Me
+        <a
+          href="/Shrajna_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={resumeButtonStyle}
+        >
+          View Resume
         </a>
 
-        </div>
+        <a href="#contact" style={contactButtonStyle}>
+          Contact Me
+        </a>
       </motion.div>
     </section>
   );
