@@ -6,7 +6,7 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <h2 className="logo">Portfolio</h2> {/* changed from Shrajna R */}
+      <h3 className="logo">Portfolio</h3>
 
       {/* Desktop Links */}
       <div className="nav-links">
