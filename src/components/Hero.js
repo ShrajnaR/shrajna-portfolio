@@ -46,10 +46,13 @@ const Hero = () => {
         </p>
 
         <div className="hero-buttons">
-          <a href="/Shrajna_Resume.pdf" target="_blank" rel="noopener noreferrer">
+          <a href="/Shrajna_Resume.pdf" className="btn-outline" target="_blank">
             View Resume
-          </a>
-          <a href="#contact">Contact Me</a>
+        </a>
+        <a href="#contact" className="btn-outline">
+            Contact Me
+        </a>
+
         </div>
       </motion.div>
     </section>
