@@ -1,43 +1,40 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import "./Navbar.css"; // your current CSS
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
     <>
       <nav className="navbar">
-        <div className="logo">Shrajna</div>
-        <div className={`nav-links`}>
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
+        <h2 className="logo">Portfolio</h2>
+
+        {/* Desktop Links */}
+        <div className="nav-links">
           <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
           <a href="#experience">Experience</a>
           <a href="#contact">Contact</a>
         </div>
 
-        {/* Hamburger icon */}
+        {/* Hamburger Icon */}
         <div className="menu-icon" onClick={toggleMenu}>
           {menuOpen ? <FaTimes /> : <FaBars />}
         </div>
       </nav>
 
-      {/* Mobile menu overlay */}
+      {/* Overlay */}
       <div
-        className={`mobile-menu-overlay ${menuOpen ? "active" : ""}`}
+        className={menuOpen ? "mobile-menu-overlay active" : "mobile-menu-overlay"}
         onClick={toggleMenu}
       ></div>
 
-      {/* Mobile menu */}
-      <div className={`mobile-menu ${menuOpen ? "active" : ""}`}>
-        <a href="#home" onClick={toggleMenu}>Home</a>
-        <a href="#about" onClick={toggleMenu}>About</a>
+      {/* Mobile Menu */}
+      <div className={menuOpen ? "mobile-menu active" : "mobile-menu"}>
         <a href="#skills" onClick={toggleMenu}>Skills</a>
+        <a href="#projects" onClick={toggleMenu}>Projects</a>
         <a href="#experience" onClick={toggleMenu}>Experience</a>
         <a href="#contact" onClick={toggleMenu}>Contact</a>
       </div>

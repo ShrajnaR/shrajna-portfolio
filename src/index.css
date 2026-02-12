@@ -34,7 +34,6 @@ h2 {
   -webkit-text-fill-color: transparent;
 }
 
-
 .btn {
   padding: 12px 28px;
   background: linear-gradient(90deg,#2563eb,#3b82f6);
@@ -45,7 +44,6 @@ h2 {
   display: inline-block;
   transition: 0.3s;
 }
-
 
 .btn:hover {
   transform: scale(1.1);
@@ -69,9 +67,9 @@ h2 {
 
 .skills-track {
   display: flex;
-  gap: 30px;
+  width: max-content;
+  animation: scroll 20s linear infinite;
 }
-
 
 .skill-card {
   min-width: 150px;
@@ -150,7 +148,7 @@ h2 {
 
 .experience-header h4 {
   margin: 5px 0 0 0;
-  color: #38bdf8;
+  color: #2563eb;
   font-weight: 500;
 }
 
@@ -192,8 +190,9 @@ nav a:visited {
 }
 
 nav a:hover {
-  color: #38bdf8;
+  color: #2563eb;
 }
+
 .certificate-link {
   display: inline-block;
   margin-top: 15px;
@@ -205,261 +204,4 @@ nav a:hover {
 
 .certificate-link:hover {
   color: #60a5fa;
-}
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 10%;
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(12px);
-  background: rgba(15,23,42,0.7);
-  z-index: 1000;
-}
-
-.logo {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #2563eb;
-}
-
-.nav-links {
-  display: flex;
-  gap: 25px;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.nav-links a:hover {
-  color: #2563eb;
-}
-
-/* Hamburger Icon */
-.menu-icon {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: white;
-  z-index: 1000;
-}
-
-/* Mobile menu */
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  right: -300px; /* hidden offscreen */
-  height: 100vh;
-  width: 250px;
-  background: #0f172a;
-  display: flex;
-  flex-direction: column;
-  padding-top: 100px;
-  gap: 30px;
-  text-align: center;
-  transition: right 0.3s ease;
-  z-index: 999;
-}
-
-.mobile-menu a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-
-.mobile-menu.active {
-  right: 0;
-}
-
-/* Overlay for closing menu */
-.mobile-menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.4);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease;
-  z-index: 998;
-}
-
-.mobile-menu-overlay.active {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Responsive: show hamburger on mobile & hide nav links */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-
-  .menu-icon {
-    display: block;
-  }
-}
-
-/* Prevent horizontal scroll */
-html, body {
-  overflow-x: hidden;
-}
-
-
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-  .menu-icon {
-    display: block;
-  }
-}
-@media (max-width: 768px) {
-  /* Stack image first, text second */
-  section {
-    flex-direction: column !important;
-    align-items: center;
-  }
-
-  section img {
-    order: 1 !important; /* image first */
-    margin-bottom: 1rem;
-  }
-
-  section div {
-    order: 2 !important; /* text second */
-    text-align: center;
-  }
-
-  /* Buttons: side by side, smaller spacing */
-  section div a {
-    padding: 10px 18px;
-    font-size: 0.9rem;
-  }
-
-  section div a + a {
-    margin-left: 10px; /* smaller gap between buttons */
-  }
-}
-.hero-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding: 50px 10%;
-}
-
-.hero-image {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #38bdf8;
-  box-shadow: 0 0 40px rgba(56,189,248,0.6);
-  order: 1; /* image first */
-}
-
-.hero-text {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  order: 2;
-}
-
-.hero-text h1 span {
-  color: #38bdf8;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 15px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-
-.hero-buttons .btn {
-  padding: 12px 28px;
-  border-radius: 30px;
-  border: 2px solid #38bdf8;
-  color: #38bdf8;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.hero-buttons .btn:hover {
-  background: #38bdf8;
-  color: white;
-}
-
-/* Skills loop */
-.skills-wrapper {
-  width: 100%;
-  overflow: hidden;
-  margin-top: 40px;
-}
-
-.skills-track {
-  display: flex;
-  gap: 30px;
-  animation: scroll 20s linear infinite;
-}
-
-.skill-card {
-  min-width: 150px;
-  text-align: center;
-  background: rgba(255,255,255,0.05);
-  padding: 20px;
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-  transition: 0.3s;
-}
-
-.skill-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 20px rgba(56,189,248,0.6);
-}
-
-@keyframes scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  .hero-section {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .hero-image {
-    order: 1;
-    margin-bottom: 1rem;
-    width: 200px;
-    height: 200px;
-  }
-
-  .hero-text {
-    order: 2;
-  }
-
-  .hero-buttons {
-    flex-direction: row; /* buttons side by side */
-    gap: 10px;
-    justify-content: center;
-  }
-
-  .hero-buttons .btn {
-    padding: 10px 18px;
-    font-size: 0.9rem;
-  }
 }
