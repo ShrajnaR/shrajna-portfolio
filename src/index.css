@@ -204,23 +204,22 @@ nav a:hover {
 .certificate-link:hover {
   color: #60a5fa;
 }
-/* Navbar */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* logo left, links right */
   align-items: center;
   padding: 20px 10%;
   position: sticky;
   top: 0;
   backdrop-filter: blur(12px);
-  background: rgba(15,23,42,0.7);
+  background: rgba(15,23,42,0.6);
   z-index: 1000;
 }
 
-.logo {
-  font-size: 1.8rem;
+.navbar .logo {
+  font-size: 1.8rem; /* same size as hers */
   font-weight: 600;
-  color: #2563eb;
+  color: #38bdf8;
 }
 
 .nav-links {
@@ -231,25 +230,28 @@ nav a:hover {
 .nav-links a {
   color: white;
   text-decoration: none;
-  transition: 0.3s;
+  font-weight: 500;
+  transition: 0.3s ease;
 }
 
 .nav-links a:hover {
   color: #2563eb;
 }
 
-/* Mobile */
+/* Hamburger Icon */
 .menu-icon {
   display: none;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   cursor: pointer;
   color: white;
+  z-index: 1000;
 }
 
+/* Mobile Menu */
 .mobile-menu {
   position: fixed;
   top: 0;
-  right: -100%;
+  right: -300px;
   height: 100vh;
   width: 250px;
   background: #0f172a;
@@ -258,26 +260,31 @@ nav a:hover {
   padding-top: 100px;
   gap: 30px;
   text-align: center;
-  transition: 0.3s ease;
-}
-
-.mobile-menu a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.2rem;
+  transition: right 0.3s ease;
+  z-index: 999;
 }
 
 .mobile-menu.active {
   right: 0;
 }
 
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+.mobile-menu a:hover {
+  color: #38bdf8;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .nav-links {
-    display: none;
+    display: none; /* hide desktop links */
   }
-
   .menu-icon {
-    display: block;
+    display: block; /* show hamburger */
   }
 }
