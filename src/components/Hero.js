@@ -5,14 +5,18 @@ import profile from "../assets/profile.jpg";
 const Hero = () => {
   return (
     <section className="hero">
-      {/* IMAGE */}
+      {/* IMAGE FIRST */}
       <motion.div
         className="hero-image"
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1 }}
       >
-        <img src={profile} alt="profile" className="hero-img" />
+        <img
+          src={profile}
+          alt="profile"
+          className="hero-img"
+        />
       </motion.div>
 
       {/* TEXT */}
@@ -41,18 +45,23 @@ const Hero = () => {
         </h3>
 
         <p>
-          Software Engineer skilled in Java, Spring Boot, SQL, Docker, and
-          Data Structures & Algorithms.
+          Software Engineer skilled in Java, Spring Boot, SQL,
+          Docker, and Data Structures & Algorithms.
         </p>
 
         <div className="hero-buttons">
-          <a href="/Shrajna_Resume.pdf" className="btn-outline" target="_blank">
+          <a
+            href="/Shrajna_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-outline"
+          >
             View Resume
-        </a>
-        <a href="#contact" className="btn-outline">
-            Contact Me
-        </a>
+          </a>
 
+          <a href="#contact" className="btn-outline">
+            Contact Me
+          </a>
         </div>
       </motion.div>
     </section>
