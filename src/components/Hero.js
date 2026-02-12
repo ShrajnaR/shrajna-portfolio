@@ -5,7 +5,6 @@ import profile from "../assets/profile.jpg";
 const Hero = () => {
   return (
     <section className="hero-section">
-      {/* Profile Image first on mobile */}
       <motion.img
         src={profile}
         alt="profile"
@@ -45,12 +44,7 @@ const Hero = () => {
         </p>
 
         <div className="hero-buttons">
-          <a
-            href="/Shrajna_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-outline"
-          >
+          <a href="/Shrajna_Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn-outline">
             View Resume
           </a>
           <a href="#contact" className="btn-outline">

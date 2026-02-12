@@ -16,7 +16,7 @@ const Navbar = () => {
         <a href="#contact">Contact</a>
       </div>
 
-      {/* Hamburger Icon */}
+      {/* Hamburger Icon for Mobile */}
       <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
         {menuOpen ? <FaTimes /> : <FaBars />}
       </div>
